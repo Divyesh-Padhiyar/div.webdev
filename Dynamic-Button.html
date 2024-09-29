@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Button</title>
+
+    <!-- Import Google Font -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+      /* General reset and styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, "Segoe UI";
+      }
+
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        background-color: #000813;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Button container to hold the buttons centrally */
+      .button-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative;
+      }
+
+      /* Image styling */
+      .button-container .img1,
+      .img2,
+      .img3 {
+        position: absolute;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      /* Individual image sizes and positions */
+      .button-container .img1 {
+        width: 170px;
+        top: 0px;
+        left: 20%;
+      }
+
+      .button-container .img2 {
+        width: 150px;
+        top: 0px;
+        left: 50%;
+      }
+
+      .button-container .img3 {
+        width: 200px;
+        top: 0px;
+        left: 80%;
+      }
+
+      /* Button base styling */
+      .button-container button {
+        width: 270px;
+        height: 130px;
+        font-size: 40px;
+        color: white;
+        padding: 15px 0;
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: rgba(134, 132, 132, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgb(139, 139, 139);
+        border-radius: 10px;
+        transition: all 0.4s ease-out;
+        text-align: center;
+        position: relative;
+        transform-style: preserve-3d;
+      }
+
+      /* Button-specific box shadow effects */
+      .button-container .button1 {
+        box-shadow: 0 0 10px aqua;
+      }
+
+      .button-container .button2 {
+        box-shadow: 0 0 5px rgb(240, 41, 210);
+      }
+
+      .button-container .button3 {
+        box-shadow: 0 0 10px rgb(187, 255, 0);
+      }
+
+      /* Button hover effects */
+      .button-container .button1:hover {
+        box-shadow: 0 10px 10px aqua, 0 10px 10px aqua;
+        border: 1.5px solid white;
+        text-shadow: 0 5px 6px rgba(255, 255, 255, 0.562);
+        animation: lightUp1 1.5s infinite;
+      }
+
+      .button-container .button2:hover {
+        box-shadow: 0 0px 20px rgb(240, 41, 210), 0 0 20px rgb(240, 41, 210);
+        text-shadow: 0 5px 6px rgba(255, 255, 255, 0.562);
+        border: 2px solid white;
+        animation: lightUp2 1.5s infinite;
+      }
+
+      .button-container .button3:hover {
+        box-shadow: 0 10px 10px rgb(187, 255, 0), 0 10px 10px rgb(187, 255, 0);
+        text-shadow: 0 5px 6px rgba(255, 255, 255, 0.562);
+        border: 1px solid white;
+        animation: lightUp3 1.5s infinite;
+      }
+
+      /* Light-up animation keyframes */
+      @keyframes lightUp1 {
+        0% {
+          box-shadow: 0 0px 10px rgb(0, 255, 255);
+          background-color: rgba(0, 255, 255, 0.1);
+        }
+        50% {
+          box-shadow: 0px 0px 50px rgb(0, 255, 255), 0px 0px 50px rgba(0, 255, 255);
+          background-color: rgba(0, 255, 255, 0.8);
+          font-size: 50px;
+        }
+        100% {
+          box-shadow: 0 0px 10px rgb(0, 255, 255);
+        }
+      }
+
+      @keyframes lightUp2 {
+        0% {
+          box-shadow: 0 0px 10px rgb(233, 41, 240);
+          background-color: rgba(233, 41, 240, 0.1);
+        }
+        50% {
+          box-shadow: 0px 0px 50px rgb(233, 41, 240), 0px 0px 50px rgba(233, 41, 240);
+          background-color: rgba(233, 41, 240, 0.5);
+          font-size: 50px;
+        }
+        100% {
+          box-shadow: 0 0px 10px rgb(233, 41, 240);
+        }
+      }
+
+      @keyframes lightUp3 {
+        0% {
+          box-shadow: 0 0px 10px rgb(187, 255, 0);
+          background-color: rgba(187, 255, 0, 0.1);
+        }
+        50% {
+          box-shadow: 0px 0px 50px rgb(187, 255, 0), 0px 0px 50px rgba(187, 255, 0);
+          background-color: rgba(187, 255, 0, 0.5);
+          font-size: 50px;
+        }
+        100% {
+          box-shadow: 0 0px 10px rgb(187, 255, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <button class="button1">Like</button>
+      <button class="button2">Share</button>
+      <button class="button3">Follow</button>
+    </div>
+  </body>
+</html>
